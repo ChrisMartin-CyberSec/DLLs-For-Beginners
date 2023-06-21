@@ -11,7 +11,7 @@
     extern "C" DllExport void legitimate_dll_func3(void){return;}
 */
 
-// Declare export functions (extern "C" to avoid the CPP name mashing)
+// Declare export functions (extern "C" to avoid the C++ name mashing)
 extern "C" DllExport void testfunc();
 extern "C" DllExport void dll_hijack();
 
