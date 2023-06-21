@@ -9,7 +9,7 @@ This repository contains two files: `main.cpp` and `dlltest.cpp`
 The `main.cpp` will be compiled as the **executable** .
 
 
-The `dlltest.cpp` will be compiled as the > dll.
+The `dlltest.cpp` will be compiled as the **dll**.
 
 
 
