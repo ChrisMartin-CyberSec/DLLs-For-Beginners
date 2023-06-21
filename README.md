@@ -25,7 +25,7 @@ Open the **Visual Studio Native Tools Command Prompt**
 ### **Without** `extern "C"` the DLL function exports become name mangled
 
 ```
-c:\Users\cmart\OneDrive\Documents\Scripts\CPP\DLL_Fun>dumpbin /exports dlltest.dll
+c:\Users\%user%\Documents\DLL_Test>dumpbin /exports dlltest.dll
 Microsoft (R) COFF/PE Dumper Version 14.36.32532.0
 Copyright (C) Microsoft Corporation.  All rights reserved.
 
