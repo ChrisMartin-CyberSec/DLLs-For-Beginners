@@ -16,8 +16,7 @@ int main()
 
     /*
         Use typedef to create a type definition for a pointer function that will be utilized for importing an EXPLICITLY exported function from our test dll
-        Set BOOL as the type for use later in the error handling logic (line 32)
-        Because we used extern "C" __declspec(dllexport), the function is not name-mangled and exports as "testfunc"
+        Set BOOL as the type for use later in the error handling logic (line 31)
         Use the 'dumpbin' tool in the Native Tools Command Prompt for Visual Studio to see the export functions of the dll
     */
     typedef BOOL (*MyFunc)();
