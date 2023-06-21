@@ -4,21 +4,14 @@
 // Create a macro for exporting functions
 #define DllExport __declspec(dllexport)
 
-/*
-// LEGITIMATE DLL EXPORT FUNCTIONS TABLE (extern "C" to avoid the C++ name-mashing):
-    extern "C" DllExport void legitimate_dll_func1(void){return;}
-    extern "C" DllExport void legitimate_dll_func2(void){return;}
-    extern "C" DllExport void legitimate_dll_func3(void){return;}
-*/
 
 // Declare export functions (extern "C" to avoid the C++ name mashing)
 extern "C" DllExport void testfunc();
 extern "C" DllExport void dll_hijack();
 
 /*
-    BOOL is a typedef of int
-    WINAPI is a typedef of __stdcall (can also use APIENTRY)
-    BOOL WINAPI translates to int __stdcall
+    BOOL WINAPI DLLMain() 
+    This is where you set your parameters for function calls based on process attachment/detachment or thread attachment/detachment
 */
 
 BOOL WINAPI DllMain(HINSTANCE hDll, DWORD ul_reason_for_call, LPVOID lpReserved)
@@ -30,6 +23,24 @@ BOOL WINAPI DllMain(HINSTANCE hDll, DWORD ul_reason_for_call, LPVOID lpReserved)
             dll_hijack();
             break;
         }
+        
+        case DLL_THREAD_ATTACH:
+         // Do thread-specific initialization.
+            break;
+
+        case DLL_THREAD_DETACH:
+         // Do thread-specific cleanup.
+            break;
+
+        case DLL_PROCESS_DETACH:
+        
+            if (lpvReserved != nullptr)
+            {
+                break; // do not do cleanup if process termination scenario
+            }
+            
+         // Perform any necessary cleanup.
+            break;
     }
     return TRUE;
 }
