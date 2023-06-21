@@ -11,6 +11,11 @@ The `main.cpp` will be compiled as the **executable** .
 
 The `dlltest.cpp` will be compiled as the **dll**.
 
+Make sure to check out the following Microsoft Documentations: 
+- [DllMain Entry Point](https://learn.microsoft.com/en-us/windows/win32/dlls/dllmain)
+- [Exporting from a DLL Using __declspec(dllexport)](https://learn.microsoft.com/en-us/cpp/build/exporting-from-a-dll-using-declspec-dllexport?view=msvc-170)
+- [GetProcAddress Function](https://learn.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-getprocaddress)
+
 
 
 ## Viewing DLL Exports Using **'dumpbin'**
