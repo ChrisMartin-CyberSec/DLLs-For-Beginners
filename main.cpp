@@ -25,7 +25,7 @@ int main()
         Set Func to the address of the "testfunc" function in the DLL
         You can use the "testfunc" function name or the ordinal displayed from the dumpbin (in this case it is 2)
     */
-    MyFunc Func = (MyFunc)GetProcAddress(hDll, (LPCSTR) "testfunc");
+    MyFunc Func = (MyFunc)GetProcAddress(hDll, (LPCSTR) "export_func");
 
     // Handle error if GetProcAddress fails
     if (!Func())
