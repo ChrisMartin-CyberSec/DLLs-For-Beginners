@@ -12,10 +12,10 @@ The `dlltest.cpp` will be compiled as the **dll**.
 ## Viewing DLL Exports Using 'dumpbin'
 
 Open the **Visual Studio Native Tools Command Prompt**
+```
+c:\Users\%user%\Documents\DLL_Test> **dumpbin /exports dlltest.dll**
 
-`c:\Users\%user%\Documents\DLL_Test> **dumpbin /exports dlltest.dll**`
-
-`Microsoft (R) COFF/PE Dumper Version 14.36.32532.0
+Microsoft (R) COFF/PE Dumper Version 14.36.32532.0
 Copyright (C) Microsoft Corporation.  All rights reserved.
 
 
@@ -52,4 +52,5 @@ File Type: DLL
         1000 .rdata
         1000 .reloc
         1000 .text
-        1000 .tls`
+        1000 .tls
+```
