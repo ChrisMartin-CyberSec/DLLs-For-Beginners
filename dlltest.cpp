@@ -6,8 +6,8 @@
 
 
 // Declare export functions (extern "C" to avoid the C++ name mashing)
-extern "C" DllExport void testfunc();
-extern "C" DllExport void dll_hijack();
+extern "C" DllExport void export_func();
+extern "C" DllExport void attach_func();
 
 /*
     BOOL WINAPI DLLMain() 
@@ -20,7 +20,7 @@ BOOL WINAPI DllMain(HINSTANCE hDll, DWORD ul_reason_for_call, LPVOID lpReserved)
     {
         case DLL_PROCESS_ATTACH:
         {
-            dll_hijack();
+            attach_func();
             break;
         }
         
@@ -48,13 +48,12 @@ BOOL WINAPI DllMain(HINSTANCE hDll, DWORD ul_reason_for_call, LPVOID lpReserved)
 
 
 // Functions List
-
-extern "C" DllExport void testfunc()
+void export_func()
 {
     std::cout << "[+] EXPLICIT EXPORT TEST SUCCESSFUL" << std::endl;
 }
 
-extern "C" DllExport void dll_hijack()
+void attach_func()
 {
     if(!system(NULL))               // System should initialize as NULL 
     {
