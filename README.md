@@ -13,7 +13,7 @@ The `dlltest.cpp` will be compiled as the **dll**.
 
 Open the **Visual Studio Native Tools Command Prompt**
 ```
-c:\Users\%user%\Documents\DLL_Test> **dumpbin /exports dlltest.dll**
+c:\Users\%user%\Documents\DLL_Test> dumpbin /exports dlltest.dll
 
 Microsoft (R) COFF/PE Dumper Version 14.36.32532.0
 Copyright (C) Microsoft Corporation.  All rights reserved.
@@ -34,8 +34,8 @@ File Type: DLL
 
     ordinal hint RVA      name
 
-          1    0 0000131B **dll_hijack**
-          2    1 000012ED **testfunc**
+          1    0 0000131B dll_hijack
+          2    1 000012ED testfunc
 
   Summary
 
